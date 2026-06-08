@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9ae9ec0-365b-420c-9bc2-c7b359bea514" name="Changes" comment="Debut de l'analyse de données">
+    <list default="true" id="d9ae9ec0-365b-420c-9bc2-c7b359bea514" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/projet_optimisateur_marketing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet_optimisateur_marketing.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lead_scoring/notebooks/01_eda.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/lead_scoring/notebooks/01_eda.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes_apprentissage.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes_apprentissage.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/sample.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,79 +28,79 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "genwox"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;genwox&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/but-yohan-carvalho/optimisateur_marketing.git",
-    "accountId": "8e5f8f43-abb7-414f-a82b-b3f28a0b2cfb"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/but-yohan-carvalho/optimisateur_marketing.git&quot;,
+    &quot;accountId&quot;: &quot;8e5f8f43-abb7-414f-a82b-b3f28a0b2cfb&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0002828978446983" />
-      <entry key="MS500" value="1.3375391549377311" />
-      <entry key="S2" value="2.41567551142228" />
-      <entry key="S5" value="3.1842966289614143" />
-      <entry key="S10" value="4.031016355211399" />
-      <entry key="S30" value="7.484053080392271" />
-      <entry key="S60" value="12.264839583454432" />
-      <entry key="M2" value="19.824323908140208" />
-      <entry key="M5" value="37.271844572398415" />
-      <entry key="M10" value="56.267376667132574" />
-      <entry key="M15" value="67.40506704096241" />
-      <entry key="M30" value="83.21719310795659" />
-      <entry key="H1" value="93.79548261032467" />
-      <entry key="H2" value="100.01428315857684" />
-      <entry key="H4" value="103.40301624427258" />
-      <entry key="D1" value="115.34744893616627" />
-      <entry key="W1" value="204.3343629561781" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000023256672" />
+      <entry key="S30" value="1.0013974274381099" />
+      <entry key="S60" value="1.049951548010157" />
+      <entry key="M2" value="1.3881305187682311" />
+      <entry key="M5" value="2.520549742776513" />
+      <entry key="M10" value="3.4529959168864597" />
+      <entry key="M15" value="3.8839022242066967" />
+      <entry key="M30" value="4.39447184460848" />
+      <entry key="H1" value="4.684298900279055" />
+      <entry key="H2" value="4.838771049549532" />
+      <entry key="H4" value="4.918531336203008" />
+      <entry key="D1" value="14.134427038868791" />
+      <entry key="W1" value="102.70681858274274" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="5.453278346678043E-40" />
-      <entry key="MS500" value="1.403884997822059E-8" />
-      <entry key="S2" value="0.010885113339210845" />
-      <entry key="S5" value="0.16427653351958757" />
-      <entry key="S10" value="0.42280405826941275" />
-      <entry key="S30" value="1.0628656492508222" />
-      <entry key="S60" value="1.792306820346956" />
-      <entry key="M2" value="2.850313116986722" />
-      <entry key="M5" value="5.217958542797211" />
-      <entry key="M10" value="7.922483880827541" />
-      <entry key="M15" value="9.604704908232785" />
-      <entry key="M30" value="12.237872174078793" />
-      <entry key="H1" value="14.222310269323533" />
-      <entry key="H2" value="15.487016131868804" />
-      <entry key="H4" value="16.208550364404495" />
-      <entry key="D1" value="17.355266057823048" />
-      <entry key="W1" value="22.352118353683835" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="9.591364691887854E-254" />
+      <entry key="S2" value="5.565063204160936E-64" />
+      <entry key="S5" value="4.9912166713754905E-26" />
+      <entry key="S10" value="2.2542940295810598E-13" />
+      <entry key="S30" value="8.068576824150133E-5" />
+      <entry key="S60" value="0.014112558470228614" />
+      <entry key="M2" value="0.20070014698334174" />
+      <entry key="M5" value="1.0110848800016958" />
+      <entry key="M10" value="1.7400003213873703" />
+      <entry key="M15" value="2.086016139176922" />
+      <entry key="M30" value="2.5013545126219188" />
+      <entry key="H1" value="2.7392852000511363" />
+      <entry key="H2" value="2.8666621319223755" />
+      <entry key="H4" value="2.9325692068713964" />
+      <entry key="D1" value="3.4912789313162667" />
+      <entry key="W1" value="8.386001778961324" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.018060739390969062" />
-      <entry key="MS500" value="0.6120918991393619" />
-      <entry key="S2" value="1.7428929731411908" />
-      <entry key="S5" value="2.7591460819753952" />
-      <entry key="S10" value="3.95924540822802" />
-      <entry key="S30" value="8.224782262936749" />
-      <entry key="S60" value="13.802074826407907" />
-      <entry key="M2" value="22.475592033233188" />
-      <entry key="M5" value="42.34487231802609" />
-      <entry key="M10" value="64.08017874472951" />
-      <entry key="M15" value="76.9207844752791" />
-      <entry key="M30" value="95.39780693195257" />
-      <entry key="H1" value="107.98428210621856" />
-      <entry key="H2" value="115.48298477685832" />
-      <entry key="H4" value="119.60196494265676" />
-      <entry key="D1" value="132.7009863755392" />
-      <entry key="W1" value="226.6861460057197" />
+      <entry key="MS100" value="9.973526977488095E-82" />
+      <entry key="MS500" value="6.306229232070813E-17" />
+      <entry key="S2" value="8.91132819003003E-5" />
+      <entry key="S5" value="0.023987057452624024" />
+      <entry key="S10" value="0.1548775572012441" />
+      <entry key="S30" value="0.5381319032490668" />
+      <entry key="S60" value="0.7909720080884003" />
+      <entry key="M2" value="1.4269902866124977" />
+      <entry key="M5" value="3.4491097257678764" />
+      <entry key="M10" value="5.145937978741528" />
+      <entry key="M15" value="5.93689105039502" />
+      <entry key="M30" value="6.87836879041858" />
+      <entry key="H1" value="7.414594696300582" />
+      <entry key="H2" value="7.700869968670979" />
+      <entry key="H4" value="7.848801370656826" />
+      <entry key="D1" value="17.625257770505826" />
+      <entry key="W1" value="111.09266953299" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -123,7 +123,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/Users/pyrog/PROG/Uqac/ML/Projet_ml",
@@ -155,25 +155,23 @@
       <workItem from="1780329875520" duration="1189000" />
       <workItem from="1780333504113" duration="3785000" />
       <workItem from="1780494639845" duration="2865000" />
-      <workItem from="1780579990811" duration="8614000" />
+      <workItem from="1780579990811" duration="5765000" />
     </task>
-    <task id="LOCAL-00001" summary="Debut de l'analyse de données">
-      <option name="closed" value="true" />
-      <created>1780926414152</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1780926414153</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Debut de l'analyse de données" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debut de l'analyse de données" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Projet_ml$data_loader.coverage" NAME="data_loader Coverage Results" MODIFIED="1780581770166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lead_scoring/src" />
