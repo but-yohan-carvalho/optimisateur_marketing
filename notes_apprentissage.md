@@ -84,6 +84,16 @@ C'est une validation visuelle intuitive **avant** d'entraîner le modèle, pour 
 
 ---
 
+**Q : Corrélation faible = variable inutile pour le modèle ?**
+
+Non. La corrélation ne mesure que les relations **linéaires** entre deux variables. Une variable avec une faible corrélation avec la cible peut quand même être très utile pour un algorithme non-linéaire comme Random Forest.
+
+Exemple dans ce dataset : `age` et `balance` ont une corrélation quasi nulle avec `deposit` (~0.03 et 0.08), mais un Random Forest pourra détecter des patterns complexes comme "les clients entre 30 et 40 ans avec un solde > 2000€ souscrivent plus souvent".
+
+**Règle** : ne jamais écarter une variable sur la seule base d'une faible corrélation linéaire.
+
+---
+
 **Q : Pourquoi utiliser une heatmap de corrélation en EDA ?**
 
 La heatmap sert à détecter les variables redondantes et les variables utiles pour le modèle.
