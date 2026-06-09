@@ -42,7 +42,7 @@ projet_optimisateur_marketing/
 
 ---
 
-## 💻 Installation et Environnement virtuel
+## Installation et Environnement virtuel
 
 Le projet utilise un environnement virtuel Python `.venv` situé à la racine.
 
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Utilisation des scripts et notebooks
+## Utilisation des scripts et notebooks
 
 Les modules dans `src/` peuvent être exécutés directement depuis la racine pour tester leur fonctionnement :
 
@@ -81,7 +81,7 @@ Et ouvrez les notebooks dans l'ordre de `01_eda.ipynb` à `04_evaluation.ipynb`.
 
 ---
 
-## 🛠️ Progression du projet
+## Progression du projet
 
 * **Semaine 1 (EDA)** : Chargement et exploration descriptive des variables du dataset. Analyse de la cible `deposit` (taux de souscription de 47.38%).
 * **Semaine 2 (Preprocessing)** : Encodage des colonnes binaires (1/0), One-Hot Encoding des variables textuelles, gestion de `pdays = -1`, et standardisation (`StandardScaler`) ajustée sur l'ensemble Train.
