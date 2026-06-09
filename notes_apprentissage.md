@@ -18,6 +18,22 @@ C'est le principe de **séparation des responsabilités** : chaque fichier a un 
 
 ---
 
+## Résumé S1
+
+Le dataset est **propre et équilibré** — 0 valeurs manquantes, 47% yes / 53% no. Pas de nettoyage majeur requis.
+
+**Variables les plus intéressantes pour la prédiction :**
+- `duration` — corrélation 0.45 avec deposit (mais inconnue avant l'appel)
+- `balance` — les souscripteurs ont un solde légèrement plus élevé
+- `previous`, `pdays` — l'historique de campagnes a un léger impact positif
+
+**3 choses à régler en S2 :**
+1. `balance` a des outliers extrêmes à plafonner
+2. `pdays = -1` est une valeur codée à transformer
+3. Les colonnes texte (`job`, `marital`, `education`…) doivent être encodées en chiffres
+
+---
+
 ## S1 — EDA & Chargement des données
 
 **Q : À quoi ça sert de compter les valeurs manquantes ?**
@@ -81,6 +97,22 @@ On fait des boxplots de variables numériques (`age`, `balance`) **séparés par
 - Si les boîtes **se superposent** → la variable ne fait pas la différence → moins utile
 
 C'est une validation visuelle intuitive **avant** d'entraîner le modèle, pour mieux comprendre les données.
+
+---
+
+**Q : À quoi servent les points au-dessus des boîtes dans un boxplot ?**
+
+Ce sont les **outliers** (valeurs aberrantes) — des valeurs qui s'éloignent trop du reste des données.
+
+**Règle de détection :**
+- Outlier haut : valeur > `Q3 + 1.5 × (Q3 - Q1)`
+- Outlier bas : valeur < `Q1 - 1.5 × (Q3 - Q1)`
+
+Dans ce dataset :
+- `age` : quelques clients très âgés (~75-95 ans), peu nombreux
+- `balance` : clients avec des soldes très élevés (jusqu'à 80 000€), très nombreux
+
+**Impact en ML :** les outliers peuvent fausser l'entraînement, surtout pour la régression logistique qui est sensible aux valeurs extrêmes. En S2 on devra décider : garder, plafonner (cap), ou supprimer ces valeurs.
 
 ---
 

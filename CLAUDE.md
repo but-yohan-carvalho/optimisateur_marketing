@@ -68,10 +68,17 @@ Toutes les fonctions sont documentées en **français**.
 
 ## Plan d'implémentation par semaine
 
-- **S1 (EDA)** — `01_eda.ipynb` + `data_loader.py` : chargement, statistiques descriptives, distribution cible, heatmap corrélation, boxplots
+- **S1 (EDA)** ✅ — `01_eda.ipynb` + `data_loader.py` : chargement, statistiques descriptives, distribution cible, heatmap corrélation, boxplots
 - **S2 (Preprocessing)** — `02_preprocessing.ipynb` + `preprocessing.py` : nettoyage, encodage, normalisation, séparation X/y
 - **S3 (Modélisation)** — `03_modeling.ipynb` + `model.py` : split 80/20 `random_state=42`, LogisticRegression, scores 0–1
 - **S4 (Évaluation)** — `04_evaluation.ipynb` + `evaluate.py` : RandomForest vs LogReg, top-10, courbes ROC & lift
+
+## Notes S1 — Points à retenir pour la suite
+
+- `balance` a des outliers extrêmes → à plafonner en S2
+- `pdays = -1` est une valeur codée → à transformer en S2
+- Colonnes texte (`job`, `marital`, `education`, `contact`, `poutcome`, `month`) → à encoder en S2
+- `duration` est très prédictive mais biaisée (inconnue avant l'appel) → à discuter en S3
 
 ## Contraintes de code
 
