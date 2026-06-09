@@ -147,3 +147,53 @@ On a obtenu :
 Ce dernier point est important : le dataset est **quasi-équilibré** (presque 50/50). C'est une bonne nouvelle — beaucoup de datasets réels sont très déséquilibrés (ex: 95% "no", 5% "yes"), ce qui oblige à utiliser des techniques spéciales (SMOTE, class_weight, etc.). Ici on n'en aura pas besoin.
 
 ---
+
+## S2 — Preprocessing (Nettoyage, Encodage et Normalisation)
+
+**Q : Pourquoi est-il indispensable d'appliquer l'ajustement (`fit`) du `StandardScaler` uniquement sur l'ensemble d'entraînement (`X_train`) ?**
+
+C'est une règle d'or pour éviter les **fuites de données (data leakage)**. 
+Si on ajustait le scaler sur l'ensemble du dataset (ou sur `X_test`), le modèle aurait indirectement accès à des informations statistiques du test set (comme sa moyenne et son écart-type). L'ensemble de test doit rester totalement invisible lors de la phase de préparation pour garantir une évaluation honnête et réaliste du modèle. 
+On fait donc :
+1. `scaler.fit(X_train)`
+2. `X_train_scaled = scaler.transform(X_train)`
+3. `X_test_scaled = scaler.transform(X_test)`
+
+---
+
+**Q : Comment a-t-on traité la valeur `-1` dans la colonne `pdays` ?**
+
+La colonne `pdays` indique le nombre de jours écoulés depuis le dernier contact. La valeur `-1` signifie "jamais contacté auparavant".
+Laisser `-1` tel quel dans une variable numérique pose problème, surtout pour les modèles linéaires comme la régression logistique, car l'algorithme va interpréter ce `-1` mathématiquement (comme étant inférieur à 0, 10 ou 100 jours, ce qui n'a pas de sens métier).
+
+Pour résoudre cela proprement :
+1. On a créé une nouvelle variable binaire indicatrice : **`pdays_jamais_contacte`** (vaut 1 si `pdays == -1`, sinon 0).
+2. On a remplacé la valeur `-1` par **`0`** dans la colonne `pdays` (puisque le fait de ne jamais avoir été contacté est désormais capturé par notre nouvelle colonne binaire, 0 devient une valeur neutre qui ne perturbe pas l'apprentissage).
+
+---
+
+**Q : Pourquoi utiliser `pd.get_dummies(..., drop_first=True)` pour l'encodage One-Hot ?**
+
+L'argument `drop_first=True` permet de supprimer la première modalité (colonne) de chaque variable catégorielle encodée. Par exemple, si la variable `marital` a 3 modalités ("married", "single", "divorced"), elle sera encodée sous forme de 2 colonnes binaires au lieu de 3.
+
+C'est indispensable pour les modèles comme la régression logistique pour éviter le **piège de la multicolinéarité** (ou "dummy variable trap"). Si on gardait les 3 colonnes, leur somme vaudrait toujours 1 pour chaque ligne, ce qui est parfaitement corrélé avec le terme constant (l'ordonnée à l'origine ou *intercept*), empêchant le solveur mathématique de converger correctement vers une solution unique pour les coefficients.
+
+---
+
+## S3 — Modélisation (Régression Logistique)
+
+**Q : Quelle est la différence entre `predict()` et `predict_proba()` pour un modèle ?**
+
+- **`predict(X)`** : renvoie directement la classe prédite (`0` ou `1`) en appliquant un seuil par défaut (généralement 0.5).
+- **`predict_proba(X)`** : renvoie les probabilités d'appartenance à chaque classe (ex: `[0.18, 0.82]`).
+
+Pour le **lead scoring**, nous avons besoin des probabilités issues de `predict_proba(X)[:, 1]`. Cela permet d'attribuer un score continu de 0 à 1 à chaque client. Ainsi, le service marketing peut classer et cibler les prospects par ordre de priorité, du plus chaud au plus froid, plutôt que d'obtenir une simple réponse binaire oui/non.
+
+---
+
+**Q : À quoi sert le paramètre `max_iter` dans la Régression Logistique ?**
+
+Le modèle de régression logistique n'a pas de solution analytique directe ; il utilise un solveur d'optimisation numérique (comme L-BFGS) pour ajuster les coefficients pas à pas.
+`max_iter` définit le nombre maximum de pas (d'itérations) que le solveur est autorisé à effectuer. Par défaut, scikit-learn utilise `max_iter=100`. Cependant, comme nous avons 43 variables après One-Hot encoding, le solveur a besoin de plus d'étapes pour converger vers la solution optimale. Nous l'avons donc fixé à `1000` pour éviter les avertissements de non-convergence.
+
+---
