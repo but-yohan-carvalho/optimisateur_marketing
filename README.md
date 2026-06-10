@@ -6,7 +6,7 @@ Le modèle développé classe les clients par score (de 0 à 1) afin d'optimiser
 
 ---
 
-## 📂 Structure du Projet
+## Structure du Projet
 
 ```
 projet_optimisateur_marketing/
