@@ -24,14 +24,15 @@ projet_optimisateur_marketing/
 │   │   ├── 01_eda.ipynb           # Exploration et analyse descriptive
 │   │   ├── 02_preprocessing.ipynb # Nettoyage, encodage et standardisation
 │   │   ├── 03_modeling.ipynb      # Entraînement de la Régression Logistique et scores
-│   │   └── 04_evaluation.ipynb    # [À FAIRE] Évaluation finale (Random Forest vs LogReg)
+│   │   └── 04_evaluation.ipynb    # [FAIT] Évaluation finale et comparaison
 │   └── src/
 │       ├── data_loader.py      # Chargement du dataset brut et encodage cible
 │       ├── preprocessing.py    # Logique métier du pré-traitement des données
 │       ├── model.py            # Fonctions d'entraînement et de sauvegarde de modèles
-│       └── evaluate.py         # [À FAIRE] Fonctions d'évaluation et de courbes de performance
+│       └── evaluate.py         # [FAIT] Fonctions d'évaluation, courbes de performance et Top leads
 ├── models/                     # Modèles entraînés et sauvegardés [NEW]
-│   └── regression_logistique.joblib
+│   ├── regression_logistique.joblib
+│   └── random_forest.joblib
 ├── CLAUDE.md                   # Guide pour Claude Code
 ├── gemini.md                   # Guide pour Gemini Code
 ├── requirements.txt            # Liste des dépendances Python [NEW]
@@ -82,8 +83,8 @@ Et ouvrez les notebooks dans l'ordre de `01_eda.ipynb` à `04_evaluation.ipynb`.
 ---
 
 ## Progression du projet
-
+ 
 * **Semaine 1 (EDA)** : Chargement et exploration descriptive des variables du dataset. Analyse de la cible `deposit` (taux de souscription de 47.38%).
 * **Semaine 2 (Preprocessing)** : Encodage des colonnes binaires (1/0), One-Hot Encoding des variables textuelles, gestion de `pdays = -1`, et standardisation (`StandardScaler`) ajustée sur l'ensemble Train.
 * **Semaine 3 (Modélisation)** : Entraînement de la Régression Logistique et obtention des scores continus de probabilités.
-* **Semaine 4 (Évaluation) [À FAIRE]** : Entraînement d'un second modèle (Random Forest), comparaison des métriques de classification et construction des courbes Lift et ROC pour identifier le Top 10 des leads.
+* **Semaine 4 (Évaluation) [FAIT]** : Entraînement du Random Forest (AUC-ROC de 0.9206 vs 0.9072 pour la Régression Logistique), tracé des courbes ROC et de Lift pour l'aide à la décision marketing, et extraction du Top 10 des meilleurs prospects.

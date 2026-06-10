@@ -197,3 +197,36 @@ Le modèle de régression logistique n'a pas de solution analytique directe ; il
 `max_iter` définit le nombre maximum de pas (d'itérations) que le solveur est autorisé à effectuer. Par défaut, scikit-learn utilise `max_iter=100`. Cependant, comme nous avons 43 variables après One-Hot encoding, le solveur a besoin de plus d'étapes pour converger vers la solution optimale. Nous l'avons donc fixé à `1000` pour éviter les avertissements de non-convergence.
 
 ---
+
+## S4 — Évaluation et Comparaison (Random Forest & Graphiques de performance)
+
+**Q : Pourquoi avoir entraîné un modèle Random Forest en plus de la Régression Logistique ?**
+
+La Régression Logistique est un modèle linéaire simple qui suppose que l'effet de chaque variable est additif et linéaire. 
+En marketing bancaire, les comportements sont souvent plus complexes et interactifs (par exemple: un solde bancaire élevé peut être un bon indicateur de souscription, mais seulement si le client a un certain niveau d'études ou d'âge). 
+
+Le Random Forest (Forêt Aléatoire) est un modèle non-linéaire basé sur un ensemble d'arbres de décision. Il est capable de détecter automatiquement ces interactions fines sans qu'on ait besoin de les spécifier à la main. C'est ce qui lui a permis de surclasser la Régression Logistique sur presque toutes les métriques de test, et en particulier sur le **Rappel (89.60% contre 79.77%)**, ce qui signifie qu'il détecte près de 10% de souscripteurs réels de plus.
+
+---
+
+**Q : Qu'est-ce que la courbe de gain cumulé (Lift) et quelle est son utilité marketing ?**
+
+La courbe de gain cumulé montre le pourcentage de souscripteurs réels que l'on parvient à toucher en fonction du pourcentage de prospects contactés (lorsqu'ils sont triés du score le plus élevé au score le plus faible).
+
+**Utilité marketing :**
+Si on appelait les clients au hasard (ligne diagonale grise), pour trouver 50% des souscripteurs réels, il faudrait appeler 50% de la base de données.
+Avec notre modèle Random Forest, la courbe grimpe très vite : en n'appelant que le **top 20%** des clients ayant les meilleurs scores, on trouve près de **60%** de l'ensemble des souscripteurs réels. C'est un gain d'efficacité et de coût gigantesque pour le centre d'appels de la banque.
+
+---
+
+**Q : Comment a-t-on extrait le "Top 10 leads" de manière commercialement exploitable ?**
+
+Les variables de notre jeu de test `X_test` sont standardisées (moyenne à 0, écart-type à 1) pour les besoins de la régression logistique. Transmettre ces données aux commerciaux (ex: âge = `-0.76` et solde = `-0.36`) n'aurait aucun sens pour eux.
+
+Pour résoudre cela :
+1. Nous avons tiré parti du fait que `train_test_split` conserve les index d'origine du DataFrame.
+2. Nous avons chargé le dataset brut non normalisé (`bank.csv`) et filtré les lignes correspondant aux index de `X_test` via `df_brut.loc[X_test.index]`.
+3. Nous avons ajouté la colonne `score_conversion` calculée par le modèle.
+4. Nous avons trié le résultat pour obtenir un tableau contenant les valeurs réelles (âge en années, solde en euros, profession en texte) directement lisibles par les commerciaux pour préparer leurs appels.
+
+---
