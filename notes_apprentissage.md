@@ -172,6 +172,18 @@ Pour résoudre cela proprement :
 
 ---
 
+**Q : Comment fonctionne la fonction d'encodage One-Hot `encoder_variables_cat` et pourquoi est-elle indispensable ?**
+
+Les modèles mathématiques ne comprennent pas le texte (ex: `"married"`, `"single"`, `"divorced"`). Si on remplaçait ces catégories par `0`, `1`, `2`, le modèle croirait qu'il y a une hiérarchie ou un ordre de grandeur (ex: célibataire est "plus grand" que marié).
+
+Pour éviter cela, on utilise le **One-Hot Encoding** via la fonction `pd.get_dummies()` de pandas :
+1. On crée une nouvelle colonne binaire (0 ou 1) pour chaque valeur de texte possible (ex: `marital_married` et `marital_single`).
+2. Si un client est célibataire (`single`), la colonne `marital_single` vaudra `1` et `marital_married` vaudra `0`.
+3. L'argument `drop_first=True` permet d'enlever la première colonne (ex: `marital_divorced`) pour éviter la multicolinéarité.
+4. L'argument `dtype=int` permet d'obtenir des `1` et des `0` au lieu de `True`/`False` pour une meilleure lisibilité dans nos fichiers de données.
+
+---
+
 **Q : Pourquoi utiliser `pd.get_dummies(..., drop_first=True)` pour l'encodage One-Hot ?**
 
 L'argument `drop_first=True` permet de supprimer la première modalité (colonne) de chaque variable catégorielle encodée. Par exemple, si la variable `marital` a 3 modalités ("married", "single", "divorced"), elle sera encodée sous forme de 2 colonnes binaires au lieu de 3.
