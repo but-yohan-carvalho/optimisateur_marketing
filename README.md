@@ -84,7 +84,7 @@ Et ouvrez les notebooks dans l'ordre de `01_eda.ipynb` à `04_evaluation.ipynb`.
 
 ## Progression du projet
  
-* **Semaine 1 (EDA)** : Chargement et exploration descriptive des variables du dataset. Analyse de la cible `deposit` (taux de souscription de 47.38%).
-* **Semaine 2 (Preprocessing)** : Encodage des colonnes binaires (1/0), One-Hot Encoding des variables textuelles, gestion de `pdays = -1`, et standardisation (`StandardScaler`) ajustée sur l'ensemble Train.
-* **Semaine 3 (Modélisation)** : Entraînement de la Régression Logistique et obtention des scores continus de probabilités.
-* **Semaine 4 (Évaluation) [FAIT]** : Entraînement du Random Forest (AUC-ROC de 0.9206 vs 0.9072 pour la Régression Logistique), tracé des courbes ROC et de Lift pour l'aide à la décision marketing, et extraction du Top 10 des meilleurs prospects.
+* **Étape 1 (EDA)** : Chargement et exploration descriptive des variables du dataset. Analyse de la cible `deposit` (taux de souscription de 47.38%).
+* **Étape 2 (Preprocessing)** : Encodage des colonnes binaires (1/0), One-Hot Encoding des variables textuelles, gestion de `pdays = -1`, et standardisation (`StandardScaler`) ajustée sur l'ensemble Train.
+* **Étape 3 (Modélisation)** : Entraînement de la Régression Logistique et obtention des scores continus de probabilités.
+* **Étape 4 (Évaluation) [FAIT]** : Entraînement du Random Forest (AUC-ROC de 0.9206 vs 0.9072 pour la Régression Logistique), tracé des courbes ROC et de Lift pour l'aide à la décision marketing, et extraction du Top 10 des meilleurs prospects.

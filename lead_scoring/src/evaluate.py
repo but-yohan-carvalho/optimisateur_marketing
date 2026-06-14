@@ -4,28 +4,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, roc_curve
 from lead_scoring.src.data_loader import charger_donnees
-
-def entrainer_random_forest(X_train: pd.DataFrame, y_train: pd.Series, random_state: int = 42, n_estimators: int = 100) -> RandomForestClassifier:
-    """
-    Entraîne un modèle Random Forest Classifier sur les données d'entraînement.
-    
-    Args:
-        X_train (pd.DataFrame): Variables explicatives d'entraînement.
-        y_train (pd.Series): Variable cible d'entraînement.
-        random_state (int): Graine de reproductibilité. Par défaut, 42.
-        n_estimators (int): Nombre d'arbres dans la forêt. Par défaut, 100.
-        
-    Returns:
-        RandomForestClassifier: Le modèle Random Forest entraîné.
-    """
-    modele = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
-    print("Entraînement du Random Forest en cours...")
-    modele.fit(X_train, y_train)
-    print("Random Forest entraîné avec succès.")
-    return modele
+from lead_scoring.src.model import entrainer_random_forest
 
 
 def calculer_metriques(y_true: pd.Series, y_pred: np.ndarray, y_prob: np.ndarray) -> dict:

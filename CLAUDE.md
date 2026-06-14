@@ -55,7 +55,7 @@ Le fichier `sample.ipynb` à la racine est un brouillon exploratoire — ne pas 
 
 ## Architecture
 
-Les notebooks ne contiennent **pas** de logique métier : ils importent et appellent uniquement les fonctions exposées dans `src/`. Chaque module `src/` correspond à une semaine du plan de travail :
+Les notebooks ne contiennent **pas** de logique métier : ils importent et appellent uniquement les fonctions exposées dans `src/`. Chaque module `src/` correspond à une étape du plan de travail :
 
 | Fichier | Responsabilité |
 |---|---|
@@ -66,19 +66,19 @@ Les notebooks ne contiennent **pas** de logique métier : ils importent et appel
 
 Toutes les fonctions sont documentées en **français**.
 
-## Plan d'implémentation par semaine
+## Plan d'implémentation par étape
 
-- **S1 (EDA)** ✅ — `01_eda.ipynb` + `data_loader.py` : chargement, statistiques descriptives, distribution cible, heatmap corrélation, boxplots
-- **S2 (Preprocessing)** — `02_preprocessing.ipynb` + `preprocessing.py` : nettoyage, encodage, normalisation, séparation X/y
-- **S3 (Modélisation)** — `03_modeling.ipynb` + `model.py` : split 80/20 `random_state=42`, LogisticRegression, scores 0–1
-- **S4 (Évaluation)** — `04_evaluation.ipynb` + `evaluate.py` : RandomForest vs LogReg, top-10, courbes ROC & lift
+- **Étape 1 (EDA)** ✅ — `01_eda.ipynb` + `data_loader.py` : chargement, statistiques descriptives, distribution cible, heatmap corrélation, boxplots
+- **Étape 2 (Preprocessing)** — `02_preprocessing.ipynb` + `preprocessing.py` : nettoyage, encodage, normalisation, séparation X/y
+- **Étape 3 (Modélisation)** — `03_modeling.ipynb` + `model.py` : split 80/20 `random_state=42`, LogisticRegression, scores 0–1
+- **Étape 4 (Évaluation)** — `04_evaluation.ipynb` + `evaluate.py` : RandomForest vs LogReg, top-10, courbes ROC & lift
 
-## Notes S1 — Points à retenir pour la suite
+## Notes Étape 1 — Points à retenir pour la suite
 
-- `balance` a des outliers extrêmes → à plafonner en S2
-- `pdays = -1` est une valeur codée → à transformer en S2
-- Colonnes texte (`job`, `marital`, `education`, `contact`, `poutcome`, `month`) → à encoder en S2
-- `duration` est très prédictive mais biaisée (inconnue avant l'appel) → à discuter en S3
+- `balance` a des outliers extrêmes → à plafonner en Étape 2
+- `pdays = -1` est une valeur codée → à transformer en Étape 2
+- Colonnes texte (`job`, `marital`, `education`, `contact`, `poutcome`, `month`) → à encoder en Étape 2
+- `duration` est très prédictive mais biaisée (inconnue avant l'appel) → à discuter en Étape 3
 
 ## Contraintes de code
 

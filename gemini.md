@@ -74,22 +74,22 @@ projet_optimisateur_marketing/
 
 ---
 
-## 🛠️ Plan d'Implémentation par Semaine
+## 🛠️ Plan d'Implémentation par Étape
 
-- **Semaine 1 (EDA)** : [01_eda.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/01_eda.ipynb) & [data_loader.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/data_loader.py)
+- **Étape 1 (EDA)** : [01_eda.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/01_eda.ipynb) & [data_loader.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/data_loader.py)
   - Chargement du CSV.
   - Statistiques descriptives (`describe()`, formes, types).
   - Analyse de la variable cible `deposit`.
   - Visualisations : distribution, heatmap de corrélation, boxplots.
-- **Semaine 2 (Preprocessing)** : [02_preprocessing.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/02_preprocessing.ipynb) & [preprocessing.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/preprocessing.py)
+- **Étape 2 (Preprocessing)** : [02_preprocessing.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/02_preprocessing.ipynb) & [preprocessing.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/preprocessing.py)
   - Nettoyage des valeurs manquantes et traitement des valeurs aberrantes.
   - Encodage des variables catégorielles (One-Hot Encoding).
   - Normalisation/Standardisation des variables numériques (`StandardScaler`).
-- **Semaine 3 (Modélisation)** : [03_modeling.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/03_modeling.ipynb) & [model.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/model.py)
+- **Étape 3 (Modélisation)** : [03_modeling.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/03_modeling.ipynb) & [model.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/model.py)
   - Séparation Train/Test (80/20, `random_state=42`).
   - Entraînement de la Régression Logistique.
   - Prédiction des probabilités (`predict_proba()`).
-- **Semaine 4 (Évaluation)** : [04_evaluation.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/04_evaluation.ipynb) & [evaluate.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/evaluate.py)
+- **Étape 4 (Évaluation)** : [04_evaluation.ipynb](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/notebooks/04_evaluation.ipynb) & [evaluate.py](file:///c:/Users/Yohan/UQAC/python_UQAC/projet_optimisateur_marketing/lead_scoring/src/evaluate.py)
   - Entraînement d'un second modèle (Random Forest).
   - Comparaison des modèles (AUC-ROC, Matrice de confusion, classification report).
   - Génération de la courbe ROC et de la courbe Lift.
